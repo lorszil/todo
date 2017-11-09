@@ -1,0 +1,14 @@
+{
+  "name": "todo-app",
+  "authors": [
+    "lorszil <lorszil@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular-local-storage": "^0.7.1",
+    "angular-toArrayFilter": "^1.0.1"
+  }
+}

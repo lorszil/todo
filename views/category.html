@@ -1,0 +1,53 @@
+<div ng-controller="todoCtrl" type="text/ng-template" class="container">
+
+    <div class="title">
+        <h2>Category</h2>
+    </div>
+
+    <div class="menu">
+        <section class="archive-control">
+            <h4>Create new category</h4>
+            <form data-ng-submit="addCategory()" class="todo-form">
+                <label><input class="form-control" type="text" ng-model="categoryText" placeholder="Enter new category" /></label>
+        <div><input class="btn btn-success" type="submit" value="create" /></div>
+            </form>
+        </section>
+        <section>
+            <h4>Remove completed items!</h4>
+            <button class="btn btn-info"><a href="" data-ng-click="updateCategory()">remove</a></button>
+        </section>
+
+        <section>
+            <h4>Search!</h4>
+            <label><input class="form-control" ng-model="search.text" placeholder="search category"></label>
+        </section>
+    </div>
+
+    <table class="table table-bordered table-hover table-condensed" id="searchObjResults" style="font-weight: bold">
+        <tr>
+            <th style="width:5%">Done</th>
+            <th style="width:85%">Title</th>
+            <th style="width:10%">Edit</th>
+        </tr>
+        <tr data-ng-repeat="category in categories | filter:search">
+            <td><input type="checkbox" data-ng-model="category.done"></td>
+            <td><a href="/category" editable-text="category.text" e-name="name" e-form="rowform"><span class="done-{{ category.done }}">{{ category.text || 'empty' }}</span></a></td>
+            <td style="white-space: nowrap">
+                <!-- form -->
+                <form href="" editable-form name="rowform" onaftersave="updateCategory()" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == category">
+                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                        save
+                    </button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+                        cancel
+                    </button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                    <button class="btn btn-danger" data-ng-click="removeCategory($index)">del</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+

@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <base href="/"/>
+
+    <title>ToDo</title>
+    <meta name="description" content="To Do">
+    <meta name="author" content="lorszil">
+
+    <!--Style-->
+    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.7.1/css/xeditable.min.css" />
+
+    <link rel="stylesheet" type='text/css' href="bower_components/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css"/>
+
+</head>
+
+    <div class="navbar">
+        <div class="logo"> <a href="/home"><img src="/assets/img/todo.svg" alt="cloud" width="80px"></a></div>
+        <a href="/todo">todo</a>
+        <a href="/category">category</a>
+        <a href="/task">task</a>
+    </div>
+
+<body ng-app="todo">
+
+    <div ng-view="ng-view" class="onepage"></div>
+
+    <!--Script-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.6.0/angular-local-storage.min.js"></script>-->
+
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <!--AngularJS-->
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/app/routeController.js"></script>
+    <script type="text/javascript" src="/app/controllers/todoController.js"></script>
+
+
+</body>
+</html>

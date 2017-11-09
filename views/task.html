@@ -1,0 +1,60 @@
+<div ng-controller="todoCtrl" type="text/ng-template" class="container">
+
+    <div class="title">
+        <h2>Task</h2>
+    </div>
+
+    <div class="menu">
+        <section class="archive-control">
+            <h4>Create new task</h4>
+            <form data-ng-submit="addTask(); addCategory" class="todo-form">
+                <label><input type="title" data-ng-model="taskText" placeholder="Enter new task" class="form-control"/></label>
+                <label>
+                    <select class="form-control" type="category" data-ng-model="taskCategory" placeholder="Choose a category!">
+                        <option data-ng-repeat="category in categories track by $index"> {{ category.text }} </option>
+                    </select>
+
+                </label>
+                <br />
+                <input class="btn btn-success" type="submit" value="create" />
+            </form>
+        </section>
+        <section>
+            <h4>Remove completed items!</h4>
+            <button class="btn btn-info"><a href="" data-ng-click="updateTask()">remove</a></button>
+        </section>
+        <section>
+            <h4>Search!</h4>
+            <label><input class="form-control" ng-model="search.title" placeholder="search for title"></label>
+            <!--<h4>OR</h4>
+            <label><input class="form-control" ng-model="search.category" placeholder="search for category"></label><br>-->
+        </section>
+
+    </div>
+
+    <table class="table table-bordered table-hover table-condensed" id="searchObjResults" style="font-weight: bold">
+        <tr style="font-weight: bold">
+            <th style="width:5%">Done</th>
+            <th style="width:40%">Title</th>
+            <th style="width:35%">Category</th>
+            <th style="width:10%">Edit</th>
+        </tr>
+        <tr data-ng-repeat="task in tasks | filter:search">
+            <td><input type="checkbox" data-ng-model="task.done"></td>
+
+            <td><a><span class="done-{{ task.done }}" href="/task" editable-text="task.title" e-name="title" e-form="rowform" e-required="e-required">{{ task.title || 'empty' }}</span></a></td>
+            <td><a><span class="done-{{ task.done }}" href="/task" editable-select="task.category" e-name="category" e-form="rowform" e-ng-options="c.value as c.text for c in categories" >{{ task.category }}</span></a></td>
+            <td style="white-space: nowrap">
+                <!-- form -->
+                <form href="" editable-form name="rowform" onaftersave="updateTask()" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == task">
+                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">save</button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">cancel</button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                    <button class="btn btn-danger" data-ng-click="removeTask($index)">del</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

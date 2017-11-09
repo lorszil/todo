@@ -1,0 +1,108 @@
+body {
+    margin:0;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    padding-top: 2%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px;
+}
+
+.todo-body{
+    margin-left: 11%;
+}
+
+.logo{
+    align-content: center;
+    margin-left: 10%;
+}
+
+.menu a{
+    color: #fdffff;
+}
+
+.title{
+    width: 80%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.table{
+    width: 95%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.menu{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.project
+{
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    border: 5px #5d5a63;
+}
+
+
+.about-img {
+    border-radius: 80%;
+}
+
+.about-image{
+    float: left;
+    margin-left: 40%;
+}
+
+
+@media screen and (max-width: 600px) {
+    ul.nav-link li.right,
+    ul.nav-link li {
+        float: none;
+    }
+}
+
+.about-h4 {
+    font-weight: 400;
+    line-height: 48px;
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+.about-text{
+    float: right;
+    margin-right: 23%;
+    margin-top: 5%;
+}
+
+.selectpicker {
+    display: inline;
+}
+
+a{
+    color: #333333;
+}
+
